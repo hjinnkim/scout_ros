@@ -60,7 +60,7 @@ int main(int argc, char **argv) {
   private_node.param<std::string>("base_frame", messenger.base_frame_,
                                   std::string("base_link"));
   private_node.param<bool>("simulated_robot", messenger.simulated_robot_,
-                           false);
+                                  false);
   // private_node.param<int>("control_rate", messenger.sim_control_rate_, 50);
   private_node.param<std::string>("odom_topic_name", messenger.odom_topic_name_,
                                   std::string("odom"));
