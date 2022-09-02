@@ -55,15 +55,13 @@ int main(int argc, char **argv) {
   // fetch parameters before connecting to rt
   // std::string port_name;
   // private_node.param<std::string>("port_name", port_name, std::string("can0"));
-  private_node.param<std::string>("odom_frame", messenger.odom_frame_,
-                                  std::string("odom"));
-  private_node.param<std::string>("base_frame", messenger.base_frame_,
-                                  std::string("base_link"));
+
+  private_node.param<std::string>("odom_frame", messenger.odom_frame_, std::string("odom"));
+  private_node.param<std::string>("base_frame", messenger.base_frame_, std::string("base_link"));
   private_node.param<bool>("simulated_robot", messenger.simulated_robot_,
-                                  false);
+false);
   // private_node.param<int>("control_rate", messenger.sim_control_rate_, 50);
-  private_node.param<std::string>("odom_topic_name", messenger.odom_topic_name_,
-                                  std::string("odom"));
+  private_node.param<std::string>("odom_topic_name", messenger.odom_topic_name_, std::string("odom"));
   private_node.param<bool>("pub_tf", messenger.pub_tf,true);
 //   if (!messenger.simulated_robot_) {
 //     // connect to robot and setup ROS subscription

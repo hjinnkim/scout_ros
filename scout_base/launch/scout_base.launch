@@ -13,7 +13,7 @@
     <arg name="is_scout_mini" default="false" />
     <arg name="simulated_robot" default="false" />
     <arg name="odom_topic_name" default="odom" />
-    <arg name="pub_tf" default="false" />
+    <arg name="pub_tf" default="true" />
     <arg name="base_frame" default="base_link" />
     <arg name="odom_frame" default="odom" />
 

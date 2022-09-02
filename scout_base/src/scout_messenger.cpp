@@ -265,18 +265,20 @@ namespace westonrobot
     geometry_msgs::Quaternion odom_quat = tf::createQuaternionMsgFromYaw(theta_);
 
     // publish tf transformation
-    geometry_msgs::TransformStamped tf_msg;
-    tf_msg.header.stamp = current_time_;
-    tf_msg.header.frame_id = odom_frame_;
-    tf_msg.child_frame_id = base_frame_;
+    if(pub_tf){
+      geometry_msgs::TransformStamped tf_msg;
+      tf_msg.header.stamp = current_time_;
+      tf_msg.header.frame_id = odom_frame_;
+      tf_msg.child_frame_id = base_frame_;
 
-    tf_msg.transform.translation.x = position_x_;
-    tf_msg.transform.translation.y = position_y_;
-    tf_msg.transform.translation.z = 0.0;
-    tf_msg.transform.rotation = odom_quat;
+      tf_msg.transform.translation.x = position_x_;
+      tf_msg.transform.translation.y = position_y_;
+      tf_msg.transform.translation.z = 0.0;
+      tf_msg.transform.rotation = odom_quat;
 
-    if(pub_tf)tf_broadcaster_.sendTransform(tf_msg);
-
+      tf_broadcaster_.sendTransform(tf_msg);
+    }
+    
     // publish odometry and tf messages
     nav_msgs::Odometry odom_msg;
     odom_msg.header.stamp = current_time_;
