@@ -247,8 +247,7 @@ namespace westonrobot
     last_time_ = current_time_;
   }
 
-  void ScoutROSMessenger::PublishOdometryToROS(double linear, double angular,
-                                               double dt)
+  void ScoutROSMessenger::PublishOdometryToROS(double linear, double angular, double dt)
   {
     // perform numerical integration to get an estimation of pose
     linear_speed_ = linear;
